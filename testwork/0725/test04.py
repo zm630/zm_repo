@@ -1,0 +1,13 @@
+int_number1=int(input("请输入第一个整数："))
+int_number2=int(input("请输入第二个整数："))
+yunsuan=int(input("请输入您要进行的运算(0:表示加法运算,1:表示减法运算,2:表示乘法运算,3:表示除法运算)："))
+if(yunsuan==0):
+    print(f"{int_number1}+{int_number2}={int_number1+int_number2}")
+elif(yunsuan==1):
+    print(f"{int_number1}-{int_number2}={int_number1-int_number2}")
+elif(yunsuan==2):
+    print(f"{int_number1}*{int_number2}={int_number1*int_number2}")
+elif(yunsuan==3):
+    print(f"{int_number1}/{int_number2}={int_number1/int_number2}")
+else:
+    print("请输入正确的运算符")

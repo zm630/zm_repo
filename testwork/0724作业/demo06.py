@@ -1,0 +1,9 @@
+grade=input("请输入你的名次：")
+if(grade=="第1名"):
+    print("你可以参加夏令营！")
+elif(grade=="第2名"):
+    print("奖励华为笔记本电脑一部")
+elif(grade=="第3名"):
+    print("奖励U盘一个")
+else:
+    print("你没有获得奖励")

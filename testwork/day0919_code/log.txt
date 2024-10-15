@@ -1,0 +1,5 @@
+2024-09-19 14:40:59,206 - demo02.py[line:11] - DEBUG: 这是一个debug级别的日志信息
+2024-09-19 14:40:59,207 - demo02.py[line:12] - INFO: 这是一个info级别的日志信息
+2024-09-19 14:40:59,207 - demo02.py[line:13] - WARNING: 这是一个warning级别的日志信息
+2024-09-19 14:40:59,207 - demo02.py[line:14] - ERROR: 这是一个error级别的日志信息
+2024-09-19 14:40:59,207 - demo02.py[line:15] - CRITICAL: 这是一个critical级别的日志信息

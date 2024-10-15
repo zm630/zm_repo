@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>个人中心 - 个人选股系统 V5.87</title>
+     <link href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script>
+         // 当center.html这个页面一旦打开 则发起Ajax请求 请求127.0.0.1:9999/center_data.html 获取到json
+        // 然后在当前页面进行渲染
+        $(function () {
+            $.get("http://127.0.0.1:9999/center_data.html",function (resp) {
+                //resp 它是一个json数组
+                str = ""
+                tableEle = $("#table")
+                for(var i = 0;i < resp.length;i++){
+                    //alert(JSON.stringify(resp[i].code))
+                    str += '<tr>' +
+                                '<td>'+ resp[i].code +'</td>' +
+                                '<td>'+ resp[i].desc +'</td>' +
+                                '<td>'+ resp[i].price +'</td>' +
+                                '<td>'+ resp[i].turnover_rate +'</td>' +
+                                '<td>'+ resp[i].new_price +'</td>' +
+                                '<td>'+ resp[i].prev_hight +'</td>' +
+                                '<td>'+ resp[i].note_info +'</td>' +
+                                '<td><a type="button" class="btn btn-default btn-xs" href="/update/000007.html"> <span class="glyphicon glyphicon-star" aria-hidden="true"></span> 修改 </a></td>' +
+                                '<td><input type="button" value="删除" id="toDel" name="toDel" systemidvaule="000007"></td>' +
+                                '</tr>'
+                    tableEle.append(str)
+                }
+            },"json")
+        })
+    </script>
+</head>
+
+<body>
+<div class="navbar navbar-inverse navbar-static-top ">
+        <div class="container">
+        <div class="navbar-header">
+                <button class="navbar-toggle" data-toggle="collapse" data-target="#mymenu">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                 </button>
+                 <a href="#" class="navbar-brand">选股系统</a>
+        </div>
+        <div class="collapse navbar-collapse" id="mymenu">
+                <ul class="nav navbar-nav">
+                        <li ><a href="/index.html">股票信息</a></li>
+                        <li class="active"><a href="">个人中心</a></li>
+                </ul>
+
+        </div>
+        </div>
+</div>
+<div class="container">
+
+    <div class="container-fluid">
+
+        <table id="table" class="table table-hover">
+            <tr>
+                    <th>股票代码</th>
+                    <th>股票简称</th>
+                    <th>涨跌幅</th>
+                    <th>换手率</th>
+                    <th>最新价(元)</th>
+                    <th>前期高点</th>
+                    <th style="color:red">备注信息</th>
+                    <th>修改备注</th>
+                    <th>del</th>
+            </tr>
+
+        </table>
+    </div>
+</div>
+</body>
+</html>            
